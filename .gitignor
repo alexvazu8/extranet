@@ -1,0 +1,55 @@
+# Archivos de entorno (contienen credenciales)
+.env
+.env.*.local
+.env.local
+.env.production
+.env.test
+
+# Directorio de almacenamiento (excepto la estructura necesaria)
+/storage/*
+!/storage/framework/
+!/storage/framework/views/
+!/storage/framework/cache/
+!/storage/framework/sessions/
+!/storage/framework/testing/
+!/storage/app/public/
+/storage/logs/*
+/storage/debugbar/*
+
+# Dependencias y builds
+/vendor/
+/node_modules/
+/public/js/
+/public/css/
+/public/hot
+/public/storage
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de IDE y editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de Laravel y testing
+bootstrap/cache/*
+.phpunit.result.cache
+.phpstorm.meta.php
+_ide_helper.php
+*.php_cs.cache
+
+# Archivos de composer y npm
+composer.lock
+package-lock.json
+
+# Archivos temporales y de debug
+*.log
+*.tmp
+*.temp
+/screenshots/ # Si usas pruebas con pantallazos

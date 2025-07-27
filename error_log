@@ -1,0 +1,51 @@
+[05-Jan-2025 09:28:03 America/Dominica] PHP Fatal error:  Uncaught Whoops\Exception\ErrorException: Using ${var} in strings is deprecated, use {$var} instead in /home3/visionmu/public_html/testextranet/vendor/facade/ignition/src/SolutionProviders/MergeConflictSolutionProvider.php:52
+Stack trace:
+#0 /home3/visionmu/public_html/testextranet/vendor/composer/ClassLoader.php(571): Whoops\Run->handleError(8192, 'Using ${var} in...', '/home3/visionmu...', 52)
+#1 /home3/visionmu/public_html/testextranet/vendor/composer/ClassLoader.php(571): include()
+#2 /home3/visionmu/public_html/testextranet/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile('/home3/visionmu...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('Facade\\Ignition...')
+#4 /home3/visionmu/public_html/testextranet/vendor/facade/ignition/src/SolutionProviders/SolutionProviderRepository.php(50): class_implements('Facade\\Ignition...')
+#5 [internal function]: Facade\Ignition\SolutionProviders\SolutionProviderRepository->Facade\Ignition\SolutionProviders\{closure}('Facade\\Ignition...', 10)
+#6 /home3/visionmu/public_html/testextranet/vendor/laravel/framework/src/Illuminate/Collections/Arr.php(717): array_filter(Array, Object(Closure), 1)
+#7 /home3/visionmu/public_html/testextranet/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(358): Illuminate\Support\Arr::where(Array, Object(Closure))
+#8 /home3/visionmu/public_html/testextranet/vendor/facade/ignition/src/SolutionProviders/SolutionProviderRepository.php(49): Illuminate\Support\Collection->filter(Object(Closure))
+#9 /home3/visionmu/public_html/testextranet/vendor/nunomaduro/collision/src/Adapters/Laravel/IgnitionSolutionsRepository.php(36): Facade\Ignition\SolutionProviders\SolutionProviderRepository->getSolutionsForThrowable(Object(Whoops\Exception\ErrorException))
+#10 /home3/visionmu/public_html/testextranet/vendor/nunomaduro/collision/src/Writer.php(244): NunoMaduro\Collision\Adapters\Laravel\IgnitionSolutionsRepository->getFromThrowable(Object(Whoops\Exception\ErrorException))
+#11 /home3/visionmu/public_html/testextranet/vendor/nunomaduro/collision/src/Writer.php(123): NunoMaduro\Collision\Writer->renderSolution(Object(Whoops\Exception\Inspector))
+#12 /home3/visionmu/public_html/testextranet/vendor/nunomaduro/collision/src/Handler.php(39): NunoMaduro\Collision\Writer->write(Object(Whoops\Exception\Inspector))
+#13 /home3/visionmu/public_html/testextranet/vendor/filp/whoops/src/Whoops/Run.php(370): NunoMaduro\Collision\Handler->handle(Object(Whoops\Exception\ErrorException))
+#14 [internal function]: Whoops\Run->handleException(Object(Whoops\Exception\ErrorException))
+#15 {main}
+  thrown in /home3/visionmu/public_html/testextranet/vendor/facade/ignition/src/SolutionProviders/MergeConflictSolutionProvider.php on line 52
+[05-Jan-2025 09:28:03 America/Dominica] PHP Fatal error:  Uncaught Whoops\Exception\ErrorException: Using ${var} in strings is deprecated, use {$var} instead in /home3/visionmu/public_html/testextranet/vendor/facade/ignition/src/SolutionProviders/MergeConflictSolutionProvider.php:52
+Stack trace:
+#0 /home3/visionmu/public_html/testextranet/vendor/composer/ClassLoader.php(571): Whoops\Run->handleError(8192, 'Using ${var} in...', '/home3/visionmu...', 52)
+#1 /home3/visionmu/public_html/testextranet/vendor/composer/ClassLoader.php(571): include()
+#2 /home3/visionmu/public_html/testextranet/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile('/home3/visionmu...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('Facade\\Ignition...')
+#4 /home3/visionmu/public_html/testextranet/vendor/facade/ignition/src/SolutionProviders/SolutionProviderRepository.php(50): class_implements('Facade\\Ignition...')
+#5 [internal function]: Facade\Ignition\SolutionProviders\SolutionProviderRepository->Facade\Ignition\SolutionProviders\{closure}('Facade\\Ignition...', 10)
+#6 /home3/visionmu/public_html/testextranet/vendor/laravel/framework/src/Illuminate/Collections/Arr.php(717): array_filter(Array, Object(Closure), 1)
+#7 /home3/visionmu/public_html/testextranet/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(358): Illuminate\Support\Arr::where(Array, Object(Closure))
+#8 /home3/visionmu/public_html/testextranet/vendor/facade/ignition/src/SolutionProviders/SolutionProviderRepository.php(49): Illuminate\Support\Collection->filter(Object(Closure))
+#9 /home3/visionmu/public_html/testextranet/vendor/nunomaduro/collision/src/Adapters/Laravel/IgnitionSolutionsRepository.php(36): Facade\Ignition\SolutionProviders\SolutionProviderRepository->getSolutionsForThrowable(Object(Symfony\Component\ErrorHandler\Error\FatalError))
+#10 /home3/visionmu/public_html/testextranet/vendor/nunomaduro/collision/src/Writer.php(244): NunoMaduro\Collision\Adapters\Laravel\IgnitionSolutionsRepository->getFromThrowable(Object(Symfony\Component\ErrorHandler\Error\FatalError))
+#11 /home3/visionmu/public_html/testextranet/vendor/nunomaduro/collision/src/Writer.php(123): NunoMaduro\Collision\Writer->renderSolution(Object(NunoMaduro\Collision\Adapters\Laravel\Inspector))
+#12 /home3/visionmu/public_html/testextranet/vendor/nunomaduro/collision/src/Handler.php(39): NunoMaduro\Collision\Writer->write(Object(NunoMaduro\Collision\Adapters\Laravel\Inspector))
+#13 /home3/visionmu/public_html/testextranet/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php(72): NunoMaduro\Collision\Handler->handle()
+#14 /home3/visionmu/public_html/testextranet/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(182): NunoMaduro\Collision\Adapters\Laravel\ExceptionHandler->renderForConsole(Object(Symfony\Component\Console\Output\ConsoleOutput), Object(Symfony\Component\ErrorHandler\Error\FatalError))
+#15 /home3/visionmu/public_html/testextranet/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(168): Illuminate\Foundation\Bootstrap\HandleExceptions->renderForConsole(Object(Symfony\Component\ErrorHandler\Error\FatalError))
+#16 /home3/visionmu/public_html/testextranet/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(204): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(Symfony\Component\ErrorHandler\Error\FatalError))
+#17 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleShutdown()
+#18 {main}
+  thrown in /home3/visionmu/public_html/testextranet/vendor/facade/ignition/src/SolutionProviders/MergeConflictSolutionProvider.php on line 52
+[21-Jul-2025 10:01:01 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.3.0". You are running 8.2.18. in /home3/visionmu/public_html/testextranet/vendor/composer/platform_check.php on line 26
+[21-Jul-2025 10:06:25 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.3.0". You are running 8.2.18. in /home3/visionmu/public_html/testextranet/vendor/composer/platform_check.php on line 26
+[21-Jul-2025 10:08:12 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.3.0". You are running 8.2.18. in /home3/visionmu/public_html/testextranet/vendor/composer/platform_check.php on line 26
+[21-Jul-2025 10:08:33 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.3.0". You are running 8.2.18. in /home3/visionmu/public_html/testextranet/vendor/composer/platform_check.php on line 26
+[21-Jul-2025 10:08:47 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.3.0". You are running 8.2.18. in /home3/visionmu/public_html/testextranet/vendor/composer/platform_check.php on line 26
+[21-Jul-2025 10:16:35 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.3.0". You are running 8.2.18. in /home3/visionmu/public_html/testextranet/vendor/composer/platform_check.php on line 26
+[21-Jul-2025 10:28:14 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.3.0". You are running 8.2.18. in /home3/visionmu/public_html/testextranet/vendor/composer/platform_check.php on line 26
+[21-Jul-2025 20:05:18 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.3.0". You are running 8.2.18. in /home3/visionmu/public_html/myproyect/vendor/composer/platform_check.php on line 26
+[21-Jul-2025 20:06:50 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.3.0". You are running 8.2.18. in /home3/visionmu/public_html/myproyect/vendor/composer/platform_check.php on line 26
+[21-Jul-2025 21:04:03 America/Chicago] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.3.0". You are running 8.2.18. in /home3/visionmu/public_html/myproyect/vendor/composer/platform_check.php on line 26
