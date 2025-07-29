@@ -163,3 +163,4 @@ Route::resource('/fotos-tours',FotosTourController::class)->middleware(['auth', 
 // Ruta para mostrar el formulario
 Route::get('/traslados-contrato-cupos-importar', [TrasladosContratoCupoController::class, 'showImportForm'])->name('traslados-contrato-cupos.import.form')->middleware(['auth', 'permission:FuncTraslados']);
 Route::post('/importar-traslados', [TrasladosContratoCupoController::class, 'importarTraslados'])->name('traslados.import')->middleware(['auth', 'permission:FuncTraslados']);
+Route::get('/traslados-descargar-plantilla', [TrasladosContratoCupoController::class, 'downloadTemplate'])->name('traslados.download-template')->middleware(['auth', 'permission:FuncTraslados']);

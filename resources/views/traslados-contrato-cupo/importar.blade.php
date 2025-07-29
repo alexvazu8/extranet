@@ -16,6 +16,13 @@
                         <span class="card-title">Importar Traslados desde Excel</span>
                     </div>
                     <div class="card-body">
+                        <!-- Botón para descargar plantilla -->
+                        <div class="mb-4">
+                            <a href="{{ route('traslados.download-template') }}" class="btn btn-success">
+                                <i class="fas fa-file-excel"></i> Descargar Plantilla Excel
+                            </a>
+                            <small class="text-muted ml-2">Descarga el formato requerido para importación</small>
+                        </div>
                         <form id="import-form" action="{{ route('traslados.import') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
@@ -45,6 +52,51 @@
                                 </ul>
                             </div>
                         @endif
+                        <!-- Tabla de Tipos de Movilidad -->
+                        <div class="mt-4">
+                            <h5>Tipos de Vehículos Disponibles</h5>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Empresa_traslado_tipo_movilidades_id</th>
+                                        <th>Empresa</th>
+                                        <th>Tipo de Vehiculo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($empresaTiposMovilidad as $tipo)
+                                    <tr>
+                                        
+                                        <td>{{ $tipo->id }}</td>
+                                        <td>{{ $tipo->empresaTraslado->Nombre_empresa_traslado }}</td>
+                                        <td>{{ $tipo->tipoMovilidade->Nombre_tipo_movilidad }}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Tabla de Servicios de Traslado -->
+                        <div class="mt-4">
+                            <h5>Servicios de Traslado Disponibles</h5>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Servicio_traslado_Id</th>
+                                        <th>Nombre del Servicio</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($servicioTraslado as $servicio)
+                                    <tr>
+                                        <td>{{ $servicio->id }}</td>
+                                        <td>{{ $servicio->Nombre_Servicio }}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+
                     </div>
                 </div>
             </div>

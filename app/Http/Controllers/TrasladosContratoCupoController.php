@@ -6,6 +6,7 @@ use App\Imports\TrasladosImport;
 use App\Models\TrasladosContratoCupo;
 use App\Models\EmpresaTrasladoTipoMovilidade;
 use App\Models\ServicioTraslado;
+use App\Models\TipoMovilidade;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -367,7 +368,20 @@ class TrasladosContratoCupoController extends Controller
 
     public function showImportForm()
     {
-        return view('traslados-contrato-cupo.importar'); // Asume que tu blade se llama importar.blade.php
+       //$tiposMovilidad = TipoMovilidade::all(); // Obtiene todos los registros
+       $servicioTraslado=ServicioTraslado::all();
+       $empresaTiposMovilidad=EmpresaTrasladoTipoMovilidade::all();
+        return view('traslados-contrato-cupo.importar', compact('empresaTiposMovilidad','servicioTraslado')); // Asume que tu blade se llama importar.blade.php
+    }
+    public function downloadTemplate()
+    {
+        $filePath = public_path('plantillas/FormatoTraslados.xlsx'); // Asegúrate de tener el archivo en esta ruta
+        
+        if(!file_exists($filePath)) {
+            abort(404, "El archivo de plantilla no existe");
+        }
+
+        return response()->download($filePath, 'FormatoTraslados.xlsx');
     }
 
 }
