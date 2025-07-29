@@ -51,8 +51,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('hotels.index') }}">Hoteles</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('empresa-traslado-tipo-movilidades.index') }}">Transfers</a>
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Gestión Traslados</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('empresa-traslado-tipo-movilidades.index') }}">Transfers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('traslados-contrato-cupos.import.form') }}">Importar Tarifas</a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('tours.index') }}">Tours</a>
