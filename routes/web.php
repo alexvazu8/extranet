@@ -160,3 +160,6 @@ Route::resource('/estrellas',EstrellaController::class)->middleware(['auth', 'pe
 
 Route::resource('/fotos-tours',FotosTourController::class)->middleware(['auth', 'permission:FuncTours']);
 
+// Ruta para mostrar el formulario
+Route::get('/traslados-contrato-cupos-importar', [TrasladosContratoCupoController::class, 'showImportForm'])->name('traslados-contrato-cupos.import.form');
+Route::post('/importar-traslados', [TrasladosContratoCupoController::class, 'importarTraslados'])->name('traslados.import');

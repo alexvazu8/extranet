@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\TrasladosImport;
 use App\Models\TrasladosContratoCupo;
 use App\Models\EmpresaTrasladoTipoMovilidade;
 use App\Models\ServicioTraslado;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 /**
  * Class TrasladosContratoCupoController
@@ -353,4 +355,19 @@ class TrasladosContratoCupoController extends Controller
         return redirect()->route('traslados-contrato-cupos.index',[$trasladosContratoCupo->Empresa_traslado_tipo_movilidades_id,$trasladosContratoCupo->Servicio_traslado_Id])
             ->with('success', 'TrasladosContratoCupo deleted successfully');
     }
+
+    public function importarTraslados(Request $request)
+    {
+        $request->validate(['archivo' => 'required|mimes:xlsx,xls']);
+        
+        Excel::import(new TrasladosImport, $request->file('archivo'));
+        
+        return back()->with('success', '¡Datos importados correctamente!');
+    }
+
+    public function showImportForm()
+    {
+        return view('traslados-contrato-cupo.importar'); // Asume que tu blade se llama importar.blade.php
+    }
+
 }
