@@ -48,8 +48,8 @@ class ToursImport implements ToCollection, WithHeadingRow
                         'Fecha_disponible' => $fechaDe->format('Y-m-d'),
                         'Cupo' => $row['cupo'] ?? null,
                         'Release' => $row['release'] ?? null,
-                        'cierre' => $row['cierre'] ?? null,
                         'Tours_id' => $row['tour_id'] ?? null,
+                        'cierre' => $row['cierre'] ?? null,
                         'created_at' => now(),
                         'updated_at' => now()
                     ];
@@ -70,7 +70,7 @@ class ToursImport implements ToCollection, WithHeadingRow
 
         // Insertar los registros restantes
         if (!empty($registros)) {
-            DB::table('traslados_contrato_cupos')->insert($registros);
+            DB::table('tours_contrato_cupos')->insert($registros);
         }
     }
 
