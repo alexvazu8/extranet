@@ -23,7 +23,7 @@
                             </a>
                             <small class="text-muted ml-2">Descarga el formato requerido para importación</small>
                         </div>
-                        <form id="import-form" action="" method="POST" enctype="multipart/form-data">
+                        <form id="import-form" action="{{ route('tours.import') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label for="archivo">Archivo Excel (.xlsx, .xls)</label>

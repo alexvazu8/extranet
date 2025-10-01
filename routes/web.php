@@ -167,4 +167,5 @@ Route::get('/traslados-descargar-plantilla', [TrasladosContratoCupoController::c
 
 // Ruta para mostrar formulario por lotes tours
 Route::get('/tours-contrato-cupos-importar', [ToursContratoCupoController::class, 'showImportForm'])->name('tours-contrato-cupos.import.form')->middleware(['auth', 'permission:FuncTours']);
+Route::post('/importar-tours', [ToursContratoCupoController::class, 'importarTours'])->name('tours.import')->middleware(['auth', 'permission:FuncTours']);
 Route::get('/tours-descargar-plantilla', [ToursContratoCupoController::class, 'downloadTemplate'])->name('tours.download-template')->middleware(['auth', 'permission:FuncTours']);

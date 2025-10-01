@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\ToursImport;
 use App\Models\ToursContratoCupo;
 use App\Models\Tour;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 /**
  * Class ToursContratoCupoController
@@ -343,5 +345,14 @@ class ToursContratoCupoController extends Controller
        $tours=Tour::all();
       
         return view('tours-contrato-cupo.importar', compact('tours')); // Asume que tu blade se llama importar.blade.php
+    }
+
+    public function importarTours(Request $request)
+    {
+        $request->validate(['archivo' => 'required|mimes:xlsx,xls']);
+        
+        Excel::import(new ToursImport, $request->file('archivo'));
+        
+        return back()->with('success', '¡Datos importados correctamente!');
     }
 }
