@@ -62,9 +62,19 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('tours.index') }}">Tours</a>
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Gestión Tours</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('tours.index') }}">Tours</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('tours-contrato-cupos.import.form') }}">Importar Tarifas</a>
+                            </li>
+                        </ul>
                     </li>
+
+
         </ul>   
     </div>
 </nav>
