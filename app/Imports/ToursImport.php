@@ -20,7 +20,7 @@ class ToursImport implements ToCollection, WithHeadingRow
         
         foreach ($rows as $row) {
             // Validación de campos requeridos
-            if (empty($row['Tour_id']) || empty($row['fecha_de']) || empty($row['fecha_hasta'])|| empty($row['adultos'])|| empty($row['costo_adulto'])) {
+            if (empty($row['tour_id']) || empty($row['fecha_de']) || empty($row['fecha_hasta'])|| empty($row['adultos'])|| empty($row['costo_adulto'])) {
                 continue;
             }
 
@@ -49,6 +49,7 @@ class ToursImport implements ToCollection, WithHeadingRow
                         'Cupo' => $row['cupo'] ?? null,
                         'Release' => $row['release'] ?? null,
                         'cierre' => $row['cierre'] ?? null,
+                        'Tours_id' => $row['tour_id'] ?? null,
                         'created_at' => now(),
                         'updated_at' => now()
                     ];
