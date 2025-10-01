@@ -336,4 +336,12 @@ class ToursContratoCupoController extends Controller
 
         return response()->download($filePath, 'FormatoTours.xlsx');
     }
+
+    public function showImportForm()
+    {
+       //$tiposMovilidad = TipoMovilidade::all(); // Obtiene todos los registros
+       $tours=Tour::all();
+      
+        return view('tours-contrato-cupo.importar', compact('tours')); // Asume que tu blade se llama importar.blade.php
+    }
 }
