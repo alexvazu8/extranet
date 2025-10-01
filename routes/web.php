@@ -160,8 +160,11 @@ Route::resource('/estrellas',EstrellaController::class)->middleware(['auth', 'pe
 
 Route::resource('/fotos-tours',FotosTourController::class)->middleware(['auth', 'permission:FuncTours']);
 
-// Ruta para mostrar el formulario
+// Ruta para mostrar el formulario por lotes traslados
 Route::get('/traslados-contrato-cupos-importar', [TrasladosContratoCupoController::class, 'showImportForm'])->name('traslados-contrato-cupos.import.form')->middleware(['auth', 'permission:FuncTraslados']);
 Route::post('/importar-traslados', [TrasladosContratoCupoController::class, 'importarTraslados'])->name('traslados.import')->middleware(['auth', 'permission:FuncTraslados']);
 Route::get('/traslados-descargar-plantilla', [TrasladosContratoCupoController::class, 'downloadTemplate'])->name('traslados.download-template')->middleware(['auth', 'permission:FuncTraslados']);
+
+// Ruta para mostrar formulario por lotes tours
+Route::get('/tours-contrato-cupos-importar', [ToursContratoCupoController::class, 'showImportForm'])->name('tours-contrato-cupos.import.form')->middleware(['auth', 'permission:FuncTours']);
 Route::get('/tours-descargar-plantilla', [ToursContratoCupoController::class, 'downloadTemplate'])->name('tours.download-template')->middleware(['auth', 'permission:FuncTours']);
