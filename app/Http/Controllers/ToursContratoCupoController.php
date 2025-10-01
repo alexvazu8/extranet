@@ -325,4 +325,15 @@ class ToursContratoCupoController extends Controller
         return redirect()->route('tours-contrato-cupos.index',$toursContratoCupo->Tours_id)
             ->with('success', 'ToursContratoCupo deleted successfully');
     }
+
+    public function downloadTemplate()
+    {
+        $filePath = public_path('plantillas/FormatoTours.xlsx'); // Asegúrate de tener el archivo en esta ruta
+        
+        if(!file_exists($filePath)) {
+            abort(404, "El archivo de plantilla no existe");
+        }
+
+        return response()->download($filePath, 'FormatoTours.xlsx');
+    }
 }
